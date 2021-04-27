@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// var singleton = (function () {
+//     var instance;
+//     return function getInstance() {
+//         if (instance == null) {
+//             instance = {             // 相当于私有化构造函数
+//                 product: "单例-懒汉"
+//             }
+//         }
+//         return instance;
+//     }
+// })()
+
+// var product = singleton();
+// console.log(product);
+// function app(...args) {
+//     console.log(...args)
+// }
+// app(1, 2, 3)
+// function Person(name) {
+//     this.name=name
+//     this.age = 19
+// }
+// function B(Person) {
+//     let a = {}
+//     a.__proto__ = Person.prototype
+//     Person.call(a)
+//     return a
+// }
+// let rr = B(Person)
+// console.log(rr)
+// let qq = new Person()
+// console.log(qq.constructor) // Person
+// console.log(Person.prototype.constructor) // Person
+// console.log(qq === Person.prototype) // false
+// obj ={
+//     name: 'yy'
+// }
+// function Person1(name) {
+//     Person.call(obj,name)
+//     this.name='yc'
+// }
+// let a = new Person1('kkkkk')
+// console.log(obj)
+// var p = new Object()
+// console.log(p)
+// let a = {}
+// console.log(a)
+// console.log(Object)
+// let option = [{
+//     id: '1',
+//     child:[{
+//       id: '1-1',
+//       value: 'yy'
+//     },{
+//         id: '1-2',
+//     }]
+// },{
+//     id: '2-2',
+//     child:[{
+//       id: '2-1',
+//       value: '2-1'
+//     },{
+//         id: '2-2',
+//     }]
+// }
+// ]
+// let flag = false
+// let arr = [] 
+// // 怎么就查找完毕
+// function findId(option, id) {
+   
+//    for(var i=0; i<option.length;i++) {
+//        if (flag) return arr
+//        let item = option[i] 
+//        if (item.id == id) {
+//         arr.push(item.id)
+//         flag = true
+//         return arr
+//         // console.log(flag)
+//        } else if (item.child) {
+//         flag = false
+//         arr.push(item.id) 
+//         findId(item.child, id)
+//         if (!flag) {
+//             arr.pop() 
+//          }
+//        }
+//    }
+//    return arr
+// }
+// let a = findId(option, '2-2')
+// console.log(a)
+// function Person() {
+
+// }
+// for (let h=1; h<=3; h++) {
+//     console.log(h)
+// }
+function toString(foo){
+    //已知有字符串foo='get-element-by-id',写一个function将其转换为驼峰表示法“getElementById”
+    
+    // var foo = 'get-element-by-id';
+    //根据某个字符进行切割
+    var arr = foo.split('-');
+    //获取每个元素中的第一个字符，并转换为大写
+    var str;
+    for(var i =0;i<arr.length;i++){
+        arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1)
+    }
+    //根据某个字符将数组转换为字符串
+    return arr.join("");
+}
+//调用方法
+let q = toString('get-element-by-id')
+console.log(q)
+</script> 
+</html>
